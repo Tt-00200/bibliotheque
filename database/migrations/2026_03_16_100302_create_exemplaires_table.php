@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('exemplaires', function (Blueprint $table) {
             $table->id();
+            $table->string('code_exemplaire');
+            $table->boolean('etat')->default(0)->comment("0=utilisable,1=detruit");
+            $table->foreignId('livre_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
