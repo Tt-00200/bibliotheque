@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Membre extends Controller
 {
@@ -11,7 +12,11 @@ class Membre extends Controller
      */
     public function index()
     {
-        //
+        $membres = DB::table('membres')->select('id','nom','prenom','telephone','code','statut','Created_at')
+        ->orderBy('id','desc')
+        ->get();
+
+        return view('admin.membre.index',compact('membres'));
     }
 
     /**
