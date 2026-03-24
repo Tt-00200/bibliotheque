@@ -24,7 +24,7 @@ class Membre extends Controller
      */
     public function create()
     {
-        //
+        return view ('admin.membre.create');
     }
 
     /**

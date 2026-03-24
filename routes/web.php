@@ -13,6 +13,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/membre',[Membre::class,'index'])->name('membre.index');
+Route::get('/membre/save',[Membre::class, 'create'])->name('membre.create');
+Route::post('/memebre/save',[Membre::class, 'store'])->name('membre.save');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

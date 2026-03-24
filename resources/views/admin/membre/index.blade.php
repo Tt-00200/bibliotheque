@@ -3,10 +3,14 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
-            <h3 class="fs-5 text-gray-700">Liste des membres</h3>
-            <a href="" class="btn btn-primary"><i class="fas fa-fw fa-plus"></i> Nouveau</a>
-            </div>
+<div class="col-md-12">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="fs-5 text-gray-700">Liste des membres</h3>
+        <a href="{{ route('membre.create')}}" class="btn btn-primary">
+            <i class="fas fa-fw fa-plus"></i> Nouveau
+        </a>
+    </div>
+</div>
         <div class="row mt-4"></div>
             <table class="table table-striped table-hover">
                 <thead>
@@ -26,9 +30,9 @@
                         <td>{{$membre->telephone}}</td>
                         <td>{!! ($membre->statut == 0) ? '<span class="badge bg-success">Actif</span>' : '<span class="badge bg-danger">Danger</span>' !!}</td>
                         <td>
-                            <a href="btn  btn-sm btn-warning text-white mr-2"><i class="fas fa-fw fa-edit"></i></a>
-                            <a href="btn  btn-sm btn-danger text-white mr-2">  <i class="fas fa-fw fa-trash"></i></a>
-                            <a href="btn  btn-sm btn-secondary text-white mr-2"><i class="fas fa-fw fa-eye"></i></a>
+                            <a href="" class="btn  btn-sm btn-warning text-white mr-2"><i class="fas fa-fw fa-edit"></i></a>
+                            <a href="" class="btn  btn-sm btn-danger text-white mr-2">  <i class="fas fa-fw fa-trash"></i></a>
+                            <a href="" class="btn  btn-sm btn-secondary text-white mr-2"><i class="fas fa-fw fa-eye"></i></a>
                         </td>
                     </tr>
                     @empty
